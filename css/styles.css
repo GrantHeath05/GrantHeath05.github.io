@@ -1,0 +1,58 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(18, 18, 18);
+  color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: rgb(33, 33, 33) !important; 
+}
+a{
+  color: lightblue;
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+  color: lightgrey; /* Light text */
+}
+
+.navbar-nav .nav-link:hover {
+  color: lightblue; /* Hover effect */
+  border-color: lightgrey;
+}
+
+/* Navbar Toggle Button */
+.navbar-toggler {
+  color: lightblue;
+}
+
+
+/* Centered Content */
+.container h1 {
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li .dropdown {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+nav ul li:hover .dropdown {
+  display: block;
+}

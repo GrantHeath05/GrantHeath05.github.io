@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Development Portfolio</title>
+
+  <!-- Font Awesome (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- JS -->
+  <script defer src="/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    /* Consistent spacing between major sections */
+    h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Reduce carousel bottom margin */
+    .carousel {
+      margin-bottom: 0 !important;
+    }
+
+    /* Uniform section spacing */
+    .section {
+      margin-bottom: 3rem;
+    }
+  </style>
+</head>
+
+<body class="bg-dark text-light">
+  <!-- Empty header placeholder (filled dynamically via JS) -->
+  <div id="header"></div>
+
+  <div class="container mt-5 mb-5">
+
+    <!-- Portfolio Header -->
+    <div class="text-center mb-4">
+      <h1 class="display-4 fw-bold">Douglas Grant Heath</h1>
+      <p class="lead">Computer Programming Student | Self-Taught Game Developer</p>
+    </div>
+    
+    <div class="section">
+
+      <!-- =======================
+           ABOUT THIS PORTFOLIO
+      ======================== -->
+      <h2>About This Portfolio <i class="fa-solid fa-circle-info"></i></h2>
+      <p>
+        Welcome to my personal game development portfolio! This site showcases a collection of projects I’ve built in my spare time — from small experiments to more polished games.
+        Each project reflects both my current skills and my ongoing growth as a game developer.
+        <br><br>
+        <i class="fa-solid fa-magnifying-glass"></i> <strong>How to Explore:</strong><br>
+        - <strong>All Projects:</strong> Browse more of the games I've made for practice.<br>
+        - <strong>Contact Me:</strong> Reach out directly or download my resume.<br>
+        - <strong>Homepage:</strong> Return to the main landing page (you’re here).<br>
+      </p>
+
+      <!-- =======================
+                ABOUT ME
+      ======================== -->
+      <h2>About Me <i class="fa-solid fa-circle-user"></i></h2>
+      <p>
+        Hi, I’m Grant, full name Douglas Grant Heath.
+        <br><br>
+        I'm a Computer Programming student at Durham College, where I’ve learned about full stack development, databases, mainframes, PC hardware, web development, and more. <br>
+        While at Durham College I gained experience with C#, Python, Java, JavaScript, and more.
+        What captured my interest most in software development was the ability to bring ideas to life and interact with them.
+        <br><br>
+        This, paired with my love for games, made it clear that I wanted to focus on game development.
+        Since my education didn’t cover game dev deeply, I began teaching myself Unity in early 2025.
+        <br><br>
+        Using resources like YouTube, Stack Overflow, GitHub, and Unity documentation, I’ve created multiple projects that helped me learn by doing — making mistakes, problem-solving, and improving with each step.
+        <br><br>
+        My programming fundamentals from school made the transition smoother, but I know there’s always more to learn and improve on.
+        Game development is a continuous learning journey that I’m excited to keep pursuing.
+        I hope this portfolio shows both where I started and where I’m heading in my game development journey.
+      </p>
+
+      <!-- =======================
+            FEATURED PROJECTS
+      ======================== -->
+      <h2>Featured Projects <i class="fa-solid fa-file"></i></h2>
+
+      <div class="row justify-content-center g-4 mt-3">
+
+        <!-- =======================
+              WORDLE PROJECT
+        ======================== -->
+        <div class="col-md-6 mb-4">
+          <div id="carouselWordle" class="carousel slide" data-bs-ride="carousel" style="max-width: 600px; margin: 0 auto;">
+            <h4>New York Times Wordle Remake</h4>
+            <p>Start Date: August 20th, 2025 – Finish Date: September 3rd, 2025</p>
+
+            <!-- Carousel Images -->
+            <div class="carousel-inner rounded shadow">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="projects/wordle/assets/wordle_example.gif" alt="Wordle Example">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="projects/wordle/assets/wordle_invalid_word.gif" alt="Wordle Invalid Word">
+              </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselWordle" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselWordle" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+
+            <!-- Buttons -->
+            <div class="text-center mt-4">
+              <a href="https://grantheath.itch.io/wordle" class="btn btn-primary btn-lg">Play the Game!</a>
+              <a href="projects/wordle/wordle.html" class="btn btn-primary btn-lg">Development Notes</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- =======================
+                TAKE TWO PROJECT
+        ======================== -->
+        <div class="col-md-6 mb-4">
+          <div id="carouselTakeTwo" class="carousel slide" data-bs-ride="carousel" style="max-width: 600px; margin: 0 auto;">
+            <h4>Take Two</h4>
+            <p>Start Date: October 1st, 2025 – Finish Date: October 5th, 2025</p>
+
+            <!-- Carousel Images -->
+            <div class="carousel-inner rounded shadow">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="projects/take_two/images/preview.png" alt="Take Two Gameplay">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="projects/take_two/images/preview_2.png" alt="Take Two Gameplay 2">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="projects/take_two/images/deadzone_preview.png" alt="Take Two Concept Art">
+              </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselTakeTwo" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselTakeTwo" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+
+            <!-- Buttons -->
+            <div class="text-center mt-4">
+              <a href="https://grantheath.itch.io/take-two" class="btn btn-primary btn-lg">Play the Game!</a>
+              <a href="projects/take_two/take_two.html" class="btn btn-primary btn-lg">Development Notes</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- =======================
+             JUNKYARD TYCOON PROJECT
+        ======================== -->
+        <div class="col-md-6 mb-4">
+          <div id="carouselJunkyardTycoon" class="carousel slide" data-bs-ride="carousel" style="max-width: 600px; margin: 0 auto;">
+            <h4>Junkyard Tycoon</h4>
+            <p>Start Date: October 25th, 2025 – Finish Date: N/A</p>
+
+            <!-- Carousel Images -->
+            <div class="carousel-inner rounded shadow">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="projects/Junkyard_Tycoon/assets/house_image.png" alt="Junkyard Tycoon Gameplay 1">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="projects/Junkyard_Tycoon/assets/racoons.png" alt="Junkyard Tycoon Gameplay 2">
+              </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselJunkyardTycoon" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselJunkyardTycoon" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+
+            <!-- Buttons -->
+            <div class="text-center mt-4">
+              <a href="404.html" class="btn btn-primary btn-lg">Play the Game!</a>
+              <a href="projects/Junkyard_Tycoon/junkyard_tycoon.html" class="btn btn-primary btn-lg">Development Notes</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- End Featured Projects -->
+
+    </div>
+  </div>
+</body>
+</html>

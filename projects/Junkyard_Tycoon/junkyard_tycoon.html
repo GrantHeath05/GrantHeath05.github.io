@@ -16,6 +16,7 @@
   <!-- JavaScript for header -->
   <script defer src="/js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 
 <body class="bg-dark text-light">
@@ -29,12 +30,12 @@
     
     <!-- Date Range -->
     <div class="text-center mb-4">
-      <p>Start Date: October 25th, 2025 - Finish Date: in Development</p>
+      <p>Start Date: October 25th, 2025 – Finish Date: In Development</p>
     </div>
 
     <!-- Itch.io Embed or Demo Link -->
     <div class="text-center">
-      <!-- Example Embed (replace link or remove entirely if not needed) -->
+      <!-- Example Embed (replace link or remove if not needed) -->
       <!-- <iframe frameborder="0" src="..." width="560" height="175"><a href="#">Game Title</a></iframe> -->
     </div>
 
@@ -43,84 +44,142 @@
     <!-- Section: Game Info -->
     <h3>Game Idea</h3>
     <p>
-      The idea for this game is the player lives in a junk yard where they can explore and collect junk. Junk can be sold or reused to get money or new items. <br>
-      The more money and success the user has the more money they can invest into the junkyard to continue to grow the business.
+      The concept for this game is that the player lives in a junkyard where they can explore and collect various junk items. Junk can be sold or repurposed to earn money or craft new items. <br>
+      As the player’s business grows and becomes more successful, they can reinvest their profits to expand and improve the junkyard. I might even make a crafting feature of some kind for repairing parts of the junkyard, for example a forklift.
     </p>
 
-    <br><br>
+    <br>
 
-    <!-- Section: Game Rules or Mechanics -->
+    <!-- Section: Player Mechanics -->
     <h3>Player Mechanics</h3>
     <ul>
-      <li><strong>Walking</strong> - the player can move freely in all directions since the game uses a top-down, bird’s-eye camera view using WASD or Arrows. </li>
-      <li><strong>Inventory System</strong> - will be able to store multiple small items in inventory or 1 medium item in hands.</li>
-     <li><strong>Large Item Handling</strong> - current plan is to add a forklift for transporting 1 large item at a time</li>
-
+      <li><strong>Walking</strong> – The player can freely move in all directions from a top-down, bird’s-eye perspective using the WASD keys or arrow keys.</li>
+      <li><strong>Inventory System</strong> – Players can store multiple small items in their inventory or carry one medium-sized item in their hands.</li>
+      <li><strong>Large Item Handling</strong> – A forklift is planned for transporting one large item at a time.</li>
     </ul>
 
-    <!-- Section: Game Rules or Mechanics -->
+    <br>
+
+    <!-- Section: Core Mechanics -->
     <h3>Core Mechanics</h3>
     <ul>
-      <li><strong>Sales</strong> - player will be able to quick sell items for a fixed price</li>
-      <li><strong>Auctions</strong> - Auction system will allow the player to potentially sell items for a larger amount but it will take longer and has a chance to sell for less</li>
-      <li><strong>Scrap for Parts</strong> - Crafting system to unlock new parts of the game, can craft things like a forklift</li>
+      <li><strong>Sales</strong> – Players can quick-sell items for a fixed price.</li>
+      <li><strong>Auctions</strong> – The auction system allows players to potentially sell items for a higher price, but it takes longer and carries the risk of selling for less.</li>
+      <li><strong>[Possible Feature]Scrap for Parts</strong> – The crafting system lets players break down items for materials and use them to unlock new parts of the game, such as building a forklift or dolly.</li>
     </ul>
 
-    <br><br>
+    <br>
 
-    <!-- Section: Team / Contributors -->
+    <!-- Section: People Involved -->
     <h3>People Involved in Project</h3>
     <p>
-      For this project I will personally be doing everything from scratch on my own. I am not an artist so im learning as I go.
+      This is a solo project that I’m building entirely from scratch. I’m not an artist, so I’m learning as I go and experimenting with simple design techniques.
     </p>
 
-    <br><br>
+    <br>
 
-    <!-- Section: Development Plan -->
-     <!--Character Customization-->
-    <h2>Character Customization</h2>
+    <!-- Section: Character Customization -->
+    <h3>Character Customization</h3>
     <p>
-      One of my main goals for this project is to challenge myself and try new things, which is why I decided to make the player fully customizable. This includes different skin tones, clothing, hats, hairstyles, and facial features.
+      One of my main goals with this project is to challenge myself and explore new systems, which is why I decided to make the player fully customizable. This includes options for skin tone, clothing, hats, hairstyles, and facial features.
     </p>
     <p>
-      Since I’m not an artist and creating a player sprite from scratch is already a challenge, I approached it in a modular way. I first created a blank white base sprite for the player, 
-      then in Unity I will tint each individual piece of the player. For other layers such as the shirt, pants, hair, and face, I made separate objects so that each part can be tinted and customized individually. 
+      Since I’m not an artist and creating a full player sprite from scratch is already challenging, I approached it in a modular way. I first created a blank white base sprite for the player. 
+      Then, in Unity, I tint each individual piece of the character. For layers like the shirt, pants, hair, and face, I created separate objects so each part can be tinted and customized independently.
     </p>
     <p>
-      Im not too sure how most games do it, but this approach is the easiest way I could think of to accomplish a fully customizable character.
+      I’m not entirely sure how most games handle character customization, but this approach made the most sense for me and goals for this project.
     </p>
-    <div class="text-left my-4">
-      <img src="assets/blank_player_sprite.png" alt="Blank Player Sprite" class="img-fluid rounded shadow">
-      <p class="mt-2 text-secondary">Blank Image of player before tint</p>
+
+    <div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px; margin-bottom: 20px;">
+  
+      <!-- Left image -->
+      <div style="text-align: center; color: white;">
+        <img src="assets/blank_player_sprite.png" 
+             alt="Example of untinted player sprite" 
+             style="display: block; margin: 0 auto; max-width: 100%;">
+        <p class="mt-2 text-secondary">Example of player not tinted</p>
+      </div>
+
+      <!-- Right image -->
+      <div style="text-align: center; color: white;">
+        <img src="assets/example_of_tinted_player.png" 
+             alt="Example of tinted player sprite" 
+             style="display: block; margin: 0 auto; max-width: 100%;">
+        <p class="mt-2 text-secondary">Example of player tinted</p>
+      </div>
+
     </div>
-    <div class="text-left my-4">
-      <img src="assets/example_of_tinted_player.png" alt="Blank Player Sprite" class="img-fluid rounded shadow">
-      <p class="mt-2 text-secondary">Example of player tinted</p>
-    </div>
-
-    <h2>Money Managment System</h2>
-    <h2>Inventory System</h2>
-    <h2>Junk Spawn Locations / Generation</h2>
-
-
 
     <p>
-      <!-- Additional details about the design or process. -->
+      I plan to add multiple cosmetics for each category to expand customization options later on. However, it’s not a top priority until the core gameplay is complete. The main goal for now is to allow players to dynamically change their appearance, and I’ll build on it over time.
     </p>
 
-    <br><br>
-    <!--
-    Section: Post-Project Comments
-    <h3>Comments After Project Development</h3>
+    <br>
+
+    <!-- Money Management -->
+    <h3>Money Management System</h3>
     <p>
-      Reflect on what went well, what could be improved, and what you learned. 
+      The Money Management System handles the player’s in-game currency using three main functions: <code>GiveMoney</code>, <code>RemoveMoney</code>, and <code>SetMoney</code>. 
+      The first two functions take a value as a parameter and adjust the player’s balance accordingly. The <code>SetMoney</code> function is used only at the start of a new save to give the player some starting cash.
     </p>
-
     <p>
-      Optional: ideas for future improvements or features.
+      These functions will integrate with the game’s buying and selling mechanics to update the player’s balance automatically when needed.
     </p>
-    -->
+    <p>
+      Player money will also be saved to preserve progress between sessions. Since the game is single-player, I don’t plan to include any file protection. 
+      it’s up to the user if they want to modify their save data. My main goal is to make sure the data is properly stored, retrieved, and updated as the player progresses.
+    </p>
 
+    <br>
+
+    <!-- Inventory System -->
+    <h3>Inventory System</h3>
+    <p>
+      The inventory system tracks and displays the items the player is carrying, which must also persist between sessions like the player’s money.
+    </p>
+    <p>
+      The player will have a limited number of inventory slots, encouraging strategic item management and leaving room for future upgrades. 
+    </p>
+    <p>
+      Since the game is 2D, there’s no need to lock the player’s mouse. Because of this I plan to let players rearrange items in their hotbar by dragging and dropping them at the bottom of the screen.
+    </p>
+
+    <br>
+
+    <!-- Junk System -->
+    <h3>Junk Spawn Locations & Generation</h3>
+    <p>
+      The junkyard will have fixed spawn points for different quality levels of junk, high-end, mid-range, and low-end plots, rarer items spawn in harder to reach places.
+      I think all plots will have a chance to spawn both good and bad items, but high-end plots will have better odds than low-end plots. 
+      Once trash spawns, it won’t disappear on its own; the player must deal with it manually. 
+
+      Each item has a different weight some can be carried in the player’s backpack, others require a dolly or even a vehicle to move. 
+      Trash has a chance to spawn each night using a random number generator for each plot.
+    </p>
+
+    <br>
+
+    <p><strong>GameManager Object:</strong></p>
+    <p>
+      The GameManager stores item IDs and sprites for each item, tracks all spawn points, and randomly generates what items appear, where they appear, and their rarity. 
+      Items only spawn if a plot is empty; if it’s occupied, the player misses that night’s spawn. This system encourages players to clean up junk regularly while rewarding them when high-value items appear.
+    </p>
+
+    <br>
+
+    <p><strong>SpawnPoint:</strong></p>
+    <p>
+      Each SpawnPoint includes a script that triggers when the player interacts with it. The script checks whether the player can pick up the item or not. if not, this script will display a message explaining why. 
+      If the player can pick it up, the script notifies the GameManager to mark that plot as empty and add the item to the player’s inventory.
+    </p>
+
+    <br>
+
+    <h3>Locked Regions</h3>
+    <p>
+      I plan on having loced areas of the junkyard which the player can explore later in the game. These areas will probably be blocked by things like fallen trees or huge piles of trash which the player has to pay to remove, these areas will have higher valued loot and maybe new systems to explore.
+    </p>
 
 
   </div>

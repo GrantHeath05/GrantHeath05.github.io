@@ -41,7 +41,7 @@
     <!-- Section: Game Info -->
     <h3>Game Info</h3>
     <p>
-      This solo project is meant to be a fun little challenege to kill some time so to make it harder I decided to set a 24-hour limit to build a playable memory match game, aiming for something fun, functional, and clean. 
+      This solo project is meant to be a fun little challenge to kill some time, so to make it harder I decided to set a 24-hour limit to build a playable memory match game, aiming for something fun, functional, and clean. 
       The goal: flip cards, find pairs, and clear the board with as few attempts as possible.
     </p>
 
@@ -51,8 +51,8 @@
     <h3>Rules / Core Mechanics</h3>
     <ul>
       <li><strong>Mechanic 1:</strong> Generates a grid of shuffled cards</li>
-      <li><strong>Mechanic 2:</strong> lets the user flip cards when pressed</li>
-      <li><strong>Mechanic 3:</strong> when user flips to matching cards they are removed</li>
+      <li><strong>Mechanic 2:</strong> Allows the user to flip two cards when clicked</li>
+      <li><strong>Mechanic 3:</strong> When the user flips two matching cards, they are removed from the grid</li>
     </ul>
 
     <br><br>
@@ -60,8 +60,8 @@
     <!-- Section: Development Plan -->
     <h3>Development Plan / Concept</h3>
     <p>
-        The game will generate a grid of flipped cards, the player can click two cards at once to flip them, if they match they are removed from the grid, if they dont match they are reflipped and the player gets to try again. 
-        the goal is to remove all cards from the grid. Amount of attempts are tracked and the goal is to finish the grid in the shortest amount of attempts as possible.
+        The game will generate a grid of flipped cards. The player will be able to click two cards at once to flip them both. If they match, they are removed. If they don't match, they're flipped back face down and the player gets to guess again. 
+        The goal is to remove all cards from the grid. The number of attempts is tracked and the goal is to finish the grid in the fewest attempts possible.
     </p>
 
     <!-- Example Image Placeholder -->
@@ -70,8 +70,63 @@
       <p class="mt-2 text-secondary">Card sprites made in Aseprite</p>
     </div>
 
+
+    <br><br>
+
+    <!-- Section: Post-Project Comments -->
+    <h3>How the game works</h3>
     <p>
-      <!-- Additional details about the design or process. -->
+      The first step of making this game was generating the grid, letting the user choose its size. I made a maximum grid size of 6x10 because that's what fit in the designed area and I didn't feel like scaling everything down depending on the number of cards. 
+      This is a somewhat lazy approach and if I was to continue development of this game I would change it, but since I gave myself a time limit my priorities were on other features.
+    </p>
+    <p>
+    Second was assigning values to the cards. I created a script in the object that stores the grid layout group, called <code>gridManager.cs</code>, which generates both the grid and an array of values matching its size. This script also tracks the number of matches.
+    Once the values are generated and shuffled, it calls another script located in the card object, <code>card.cs</code>, which contains a <code>cardSetup()</code> function.
+    This function stores the assigned value passed from <code>gridManager.cs</code> and uses it to assign the correct sprite using a switch statement (Circle, Star, Square, Diamond, or Triangle):<br>
+
+<code>        
+  switch (value.ToLower())<br>
+        {<br>
+            case "circle": valueImage.sprite = circle; break;<br>
+            case "star": valueImage.sprite = star; break;<br>
+            case "square": valueImage.sprite = square; break;<br>
+            case "diamond": valueImage.sprite = diamond; break;<br>
+            case "triangle": valueImage.sprite = triangle; break;<br>
+            default: break;<br>
+        }</code>
+    </p>
+    <p>
+        Once each card is being independently tracked, I continued making the <code>card.cs</code>, which contains functions that gridManager can use to interact with each individual card. These functions include 
+        <code>OnClickRevealCard()</code>, <code>FlipUp()</code>, <code>FlipDown()</code>, <code>GetCardValue()</code>, and <code>RemoveCard()</code>.
+    </p>
+    <p>
+      The purpose of these functions is to allow <code>gridManager.cs</code> to control each and every card on the board and track their states. For example, if two cards are flipped at once 
+      <code>gridManager.cs</code> can stop the player from flipping a third until they are both either removed from the board or flipped back face down.
+    </p>
+    <p>
+      When a card is clicked, the <code>card.cs</code> script first checks that the card can be flipped, then if all is good it is flipped face up and <code>card.cs</code> lets <code>gridManager.cs</code> know:
+      <code><br>
+          public void OnClick()<br>
+          {<br>
+              if (!isFlipped && gridManager.CanReveal())<br>
+              {<br>
+                  FlipUp();<br>
+                  gridManager.CardRevealed(this);<br>
+              }<br>
+          }<br>
+      </code>
+    </p>
+    <p>
+      Initially, the <code>RemoveCard()</code> function destroyed the card object, but this caused the grid to shift, so instead <code>card.cs</code> just hides all sprites on the card object and <code>gridManager.cs</code> tracks the state of each card.
+    </p>
+    <p>
+      <code>GetCardValue()</code> is just a getter that returns the <code>cardValue</code>
+    </p>
+    <p>
+      <code>FlipUp()</code> and <code>FlipDown()</code> just change the sprites to visually flip the card face down or face up.
+    </p>
+    <p>
+      All of that, along with an if statement that checks <code>if (matchingPairs == totalPairs)</code>, is essentially how the game works.
     </p>
 
     <br><br>
@@ -79,12 +134,15 @@
     <!-- Section: Post-Project Comments -->
     <h3>Comments After Project</h3>
     <p>
-      The hardest part about making this game was to track each cards value and remove them from the grid without making everything shift.
+      I had a harder time than expected with the card tracking logic and at the start I didn't even consider that giving the player control over grid size could result in uneven layouts, so I added some validation to the home page where the user picks the grid size. Overall this project was pretty fun,
+      I successfully made this game in 24 hours and because of that I'm pretty proud of it. I set the goal for 24 hours but in the end it took me around 4-5 hours of work.
+    </p>
+    <p>
+      In the end this project was good practice for logic in a game engine, which is extremely useful for all games that I will create in the future. 
     </p>
 
-    <p>
-      If I was to expand on this game I could add features like highscore tracking and more card types, but since this is meant to be just a fun little practice project I might not do that.
-    </p>
+    <br><br>
+
           <!-- Left image -->
       <div style="text-align: center; color: white;">
         <img src="assets/cards_preview.png" 

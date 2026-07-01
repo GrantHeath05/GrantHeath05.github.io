@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grant Heath – Software Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+<header>
+    <nav class="nav-container">
+
+
+    <div class="header-left">
+    <li data-page="home" class="active home-icon">
+            <i class="fa-solid fa-house"></i>
+    </li>
+</div>
+
+
+
+        <div class="header-center">
+            <li data-page="softwaredev">Software Development</li>
+            <li data-page="gamedev">Game Development</li>
+            <li data-page="mainframe">Mainframe Development</li>
+        </div>
+
+        <div class="header-right">
+            <li data-page="contact">Contact Me</li>
+        </div>
+
+    </nav>
+</header>
+
+
+<main>
+    <div id="content">
+        <!-- Loaded content goes here -->
+    </div>
+</main>
+
+<script>
+    // Load a page from /categories/*.html
+    async function loadPage(pageName) {
+        try {
+            const response = await fetch(`categories/${pageName}.html`);
+            const html = await response.text();
+            document.getElementById("content").innerHTML = html;
+        } catch (err) {
+            document.getElementById("content").innerHTML =
+                "<h2>Error</h2><p>Could not load content.</p>";
+        }
+    }
+
+    // Load default page
+    loadPage("home");
+
+    // Handle navigation clicks
+    document.querySelectorAll("nav li").forEach(tab => {
+        tab.addEventListener("click", () => {
+
+            // Update active tab
+            document.querySelector("nav li.active").classList.remove("active");
+            tab.classList.add("active");
+
+            // Load the corresponding HTML file
+            const page = tab.getAttribute("data-page");
+            loadPage(page);
+        });
+    });
+</script>
+
+</body>
+</html>
